@@ -10,15 +10,20 @@ public class ReverseStringList {
         list.add("banana");
         list.add("cherry");
         list.add("date");
-        System.out.println("Reversed list is : " + reverseList(list));
+         reverseList(list);
+        System.out.println("Reversed list is : " +list);
         
     }
 
-    private static List<String> reverseList(List<String> list) {
-        List<String> reversedList= new ArrayList<>();
-        for (int i = list.size()-1; i >=0; i--) {
-            reversedList.add(list.get(i));
+    private static void reverseList(List<String> list) {
+        int s=0;
+        int e = list.size()-1;
+        while (s<=e){
+            String temp = list.get(s);
+            list.set(s,list.get(e));
+            list.set(e,temp);
+            s++;
+            e--;
         }
-        return reversedList;
     }
 }
